@@ -4,17 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../collections/list.c 
+../panel/collections/list.c 
 
 OBJS += \
-./collections/list.o 
+./panel/collections/list.o 
 
 C_DEPS += \
-./collections/list.d 
+./panel/collections/list.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-collections/%.o: ../collections/%.c
+panel/collections/%.o: ../panel/collections/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
 	gcc -O3 -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
