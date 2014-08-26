@@ -4,19 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../collections/dictionary.c \
-../collections/list.c \
-../collections/queue.c 
+../collections/list.c 
 
 OBJS += \
-./collections/dictionary.o \
-./collections/list.o \
-./collections/queue.o 
+./collections/list.o 
 
 C_DEPS += \
-./collections/dictionary.d \
-./collections/list.d \
-./collections/queue.d 
+./collections/list.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
