@@ -15,8 +15,8 @@
 	void registros(t_registros_cpu* registros); //valores de registros de la cpu
 	//(cada vez que cambie algún valor deberá invocarse)
 
-	void ejecucion_hilo(t_hilo* hilo, uint32_t quantum); //inicio de ejecución del hilo actual
-	void ejecucion_iddle(); //cuando no ejecuta ningún hilo
+	void comienzo_ejecucion(t_hilo* hilo, uint32_t quantum); //inicio de ejecución del hilo actual
+	void fin_ejecucion(); //cuando termina de ejecutar el hilo actual
 
 	void ejecucion_instruccion(char* mnemonico, t_list* parametros); //parámetros es una lista de strings
 
