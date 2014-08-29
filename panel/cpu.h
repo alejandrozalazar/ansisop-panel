@@ -4,7 +4,7 @@
 	#include "panel.h"
 
 	typedef struct {
-		uint32_t registros_programacion[5]; //A, B, C, D y E
+		int32_t registros_programacion[5]; //A, B, C, D y E
 		uint32_t M; //Base de segmento de código
 		uint32_t P; //Puntero de instrucción
 		uint32_t X; //Base del segmento de Stack
