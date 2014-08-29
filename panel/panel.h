@@ -3,7 +3,6 @@
 
 	#include <stdint.h>
 	#include <stdbool.h>
-	#include <stdio.h>
 	#include "collections/list.h"
 
 	typedef enum { KERNEL, CPU } t_tipo_proceso;
@@ -22,18 +21,15 @@
 		t_cola cola;
 	} t_hilo;
 
-
-
 	/*
 	 * Las funciones declaradas en los headers panel.h, cpu.h,
-	 * y kernel.hdeben ser invocadas a modo de notificacion de
+	 * y kernel.h deben ser invocadas a modo de notificación de
 	 * los eventos que representan.
 	 */
 
-
 	/**
-	 * Debe invocarse luego de inicializar el proceso en cuestion (CPU o Kernel).
-	 * Por ejemplo: inicializar_panel("/home/utnso/panel");
+	 * Debe invocarse luego de inicializar el proceso en cuestión (CPU o Kernel).
+	 * Por ejemplo: inicializar_panel(CPU, "/home/utnso/panel");
 	 *
 	 * @param  tipo_proceso Indica si es un CPU o un Kernel.
 	 * @param  path  Es la ruta absoluta a un directorio donde el panel pueda

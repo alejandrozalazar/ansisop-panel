@@ -13,13 +13,11 @@
 		uint32_t I; //PID
 	} t_registros_cpu;
 
-
-
 	/**
 	 * Debe invocarse cada vez que un hilo ingrese a la CPU.
 	 *
 	 * @param  hilo  Estructura conteniendo todos los campos del TCB del hilo.
-	 * @param  quantum  Tamanio del Quantum.
+	 * @param  quantum  Tamaño del Quantum.
 	 */
 	void comienzo_ejecucion(t_hilo* hilo, uint32_t quantum);
 
@@ -29,21 +27,25 @@
 	void fin_ejecucion();
 
 	/**
-	 * Debe invocarse cada vez se vaya a ejecutar una instruccion.
+	 * Debe invocarse cada vez se vaya a ejecutar una instrucción.
 	 * Por ejemplo: ejecucion_instruccion("ABCD", "soy", 1, "parametro");
 	 *
-	 * @param  mnemonico  Nombre de la instruccion a ejecutar.
-	 * @param  parametros  Parametros de la instruccion a ejecutar.
+	 * @param  mnemonico  Nombre de la instrucción a ejecutar.
+	 * @param  parametros  Parametros de la instrucción. a ejecutar.
 	 */
 	void ejecucion_instruccion(char* mnemonico, t_list* parametros);
 
 	/**
-	 * Debe invocarse cada vez que ocura algun cambio en alguno de los
-	 * registros de la CPU (Una vez por instruccion a ejecutar, luego de
-	 * llamar a ejecucion_instruccion().
+	 * Debe invocarse cada vez que ocura algún cambio en alguno de los
+	 * registros de la CPU (una vez por instruccion a ejecutar, luego de
+	 * llamar a ejecucion_instruccion()).
 	 *
 	 * @param  registros  Estructura conteniendo cada uno de los registros de la CPU.
 	 */
 	void cambio_registros(t_registros_cpu registros);
+
+	//-------------------------------------------------
+	//Retrocompatibilidad con el ejemplo del enunciado:
+	void ejecucion_hilo(t_hilo* hilo, uint32_t quantum);
 
 #endif

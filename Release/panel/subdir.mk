@@ -5,15 +5,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../panel/cpu.c \
-../panel/kernel.c 
+../panel/kernel.c \
+../panel/panel.c 
 
 OBJS += \
 ./panel/cpu.o \
-./panel/kernel.o 
+./panel/kernel.o \
+./panel/panel.o 
 
 C_DEPS += \
 ./panel/cpu.d \
-./panel/kernel.d 
+./panel/kernel.d \
+./panel/panel.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
