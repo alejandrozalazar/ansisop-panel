@@ -36,7 +36,7 @@ void cambio_registros(t_registros_cpu registros) {
 	);
 }
 
-//-------------------------------------
+//-------------------------------------------------
 //Retrocompatibilidad con el ejemplo del enunciado:
 void ejecucion_hilo(t_hilo* hilo, uint32_t quantum) {
 	comienzo_ejecucion(hilo, quantum);
