@@ -32,7 +32,7 @@
 	void desconexion_consola(uint32_t id);
 
 	/**
-	* Debe invocarse cada vez que ocurra algun cambio en algun campo
+	* Debe invocarse cada vez que ocurra algún cambio en algun campo
 	* del TCB de un hilo.
 	*
 	*/
@@ -40,11 +40,11 @@
 
 	/**
 	* Debe invocarse cada vez que la CPU invoque una funcionalidad definida
-	* en la seccion del enunciado "Servicios expuestos a la CPU".
+	* en la sección del enunciado "Servicios expuestos a la CPU".
 	*
 	* @param  mnemonico  Nombre de la funcionalidad.
-	* @parm  hilo Estructura TCB del hilo que invoco la funcionalidad.
+	* @param  hilo Estructura TCB del hilo que invocó la funcionalidad.
 	*/
-	void instruccion_protegida(char* mnemonico, t_hilo* hilo); //instrucción protegida desde el modo kernel
+	void instruccion_protegida(char* mnemonico, t_hilo* hilo);
 
 #endif
