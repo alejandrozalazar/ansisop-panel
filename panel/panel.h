@@ -19,12 +19,29 @@
 		uint32_t segmento_codigo;
 		uint32_t segmento_codigo_size;
 		uint32_t puntero_instruccion;
+		uint32_t base_stack;
 		uint32_t cursor_stack;
 		uint32_t registros[5];
 		t_cola cola;
 	} t_hilo;
 
-	//Las funciones declaradas en estos headers deberán
-	//ser invocadas a modo de notificación ante los eventos.
+
+
+	/*
+	 * Las funciones declaradas en los headers panel.h, cpu.h,
+	 * y kernel.hdeben ser invocadas a modo de notificacion de
+	 * los eventos que representan.
+	 */
+
+
+	/**
+	 * Debe invocarse luego de inicializar el proceso en cuestion (CPU o Kernel).
+	 * Por ejemplo: inicializar_panel("/home/utnso/panel");
+	 *
+	 * @param  tipo_proceso Indica si es un CPU o un Kernel.
+	 * @param  path  Es la ruta absoluta a un directorio donde el panel pueda
+	 *               generar archivos de log libremente. El directorio debe existir.
+	 **/
+	void inicializar_panel(t_tipo_proceso tipo_proceso, char* path);
 
 #endif

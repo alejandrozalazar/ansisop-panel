@@ -4,20 +4,46 @@
 	#include "panel.h"
 
 	typedef struct {
-		uint32_t registros_programacion[4]; //A, B, C, D y E
+		uint32_t registros_programacion[5]; //A, B, C, D y E
 		uint32_t M; //Base de segmento de código
 		uint32_t P; //Puntero de instrucción
+		uint32_t X; //Base del segmento de Stack
 		uint32_t S; //Cursor de stack
 		uint32_t K; //Kernel Mode
 		uint32_t I; //PID
 	} t_registros_cpu;
 
-	void registros(t_registros_cpu registros); //valores de registros de la cpu
-	//(cada vez que cambie algún valor deberá invocarse)
 
-	void comienzo_ejecucion(t_hilo* hilo, uint32_t quantum); //inicio de ejecución del hilo actual
-	void fin_ejecucion(); //cuando termina de ejecutar el hilo actual
 
-	void ejecucion_instruccion(char* mnemonico, t_list* parametros); //parámetros es una lista de strings
+	/**
+	 * Debe invocarse cada vez que un hilo ingrese a la CPU.
+	 *
+	 * @param  hilo  Estructura conteniendo todos los campos del TCB del hilo.
+	 * @param  quantum  Tamanio del Quantum.
+	 */
+	void comienzo_ejecucion(t_hilo* hilo, uint32_t quantum);
+
+	/**
+	 * Debe invocarse cada vez que un hilo salga de la CPU.
+	 */
+	void fin_ejecucion();
+
+	/**
+	 * Debe invocarse cada vez se vaya a ejecutar una instruccion.
+	 * Por ejemplo: ejecucion_instruccion("ABCD", "soy", 1, "parametro");
+	 *
+	 * @param  mnemonico  Nombre de la instruccion a ejecutar.
+	 * @param  parametros  Parametros de la instruccion a ejecutar.
+	 */
+	void ejecucion_instruccion(char* mnemonico, t_list* parametros);
+
+	/**
+	 * Debe invocarse cada vez que ocura algun cambio en alguno de los
+	 * registros de la CPU (Una vez por instruccion a ejecutar, luego de
+	 * llamar a ejecucion_instruccion().
+	 *
+	 * @param  registros  Estructura conteniendo cada uno de los registros de la CPU.
+	 */
+	void cambio_registros(t_registros_cpu registros);
 
 #endif

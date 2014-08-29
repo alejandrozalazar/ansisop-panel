@@ -1,6 +1,6 @@
 #include "cpu.h"
 
-void registros(t_registros_cpu registros) {
+void cambio_registros(t_registros_cpu registros) {
 	printf("Registros: { A: %d, B: %d, C: %d, D: %d, E: %d, M: %d, P: %d, S: %d, K: %d, I: %d }\n",
 		registros.registros_programacion[0],
 		registros.registros_programacion[1],
