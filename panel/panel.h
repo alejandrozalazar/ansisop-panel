@@ -7,9 +7,6 @@
 	#include "collections/list.h"
 
 	typedef enum { KERNEL, CPU } t_tipo_proceso;
-
-	void soy_un(t_tipo_proceso tipo_proceso); //si es un Kernel o CPU
-
 	typedef enum { NEW, READY, EXEC, BLOCK, EXIT } t_cola;
 
 	typedef struct {
@@ -21,7 +18,7 @@
 		uint32_t puntero_instruccion;
 		uint32_t base_stack;
 		uint32_t cursor_stack;
-		uint32_t registros[5];
+		int32_t registros[5];
 		t_cola cola;
 	} t_hilo;
 
