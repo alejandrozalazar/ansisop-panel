@@ -36,8 +36,7 @@
 	* del TCB de un hilo.
 	*
 	*/
-	void hilos(t_list* hilos); //array de hilos (t_hilo*) en el sistema
-	//(cada vez que cambie algún valor en algún hilo deberá invocarse)
+	void hilos(t_list* hilos);
 
 	/**
 	* Debe invocarse cada vez que la CPU invoque una funcionalidad definida
