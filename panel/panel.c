@@ -14,12 +14,12 @@ void inicializar_panel(t_tipo_proceso tipo_proceso, char* path){
 
 	char* logFile = string_duplicate(path);
 	string_append(&logFile, tipo_proceso_str);
-	string_append(&logFile, ".log");
+	string_append(&logFile, ".logg");
 
 	remove(logFile);
-	log = log_create(logFile, tipo_proceso_str, true, LOG_LEVEL_INFO);
+	logg = log_create(logFile, tipo_proceso_str, true, LOG_LEVEL_INFO);
 
-	log_info(log, "Inicializando panel para %s, en \"%s\"", tipo_proceso_str, logFile);
+	log_info(logg, "Inicializando panel para %s, en \"%s\"", tipo_proceso_str, logFile);
 
 	free(logFile);
 

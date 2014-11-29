@@ -26,7 +26,7 @@
 		t_cola cola;
 	} t_hilo;
 
-	t_log* log;
+	t_log* logg;
 
 	/*
 	 * Las funciones declaradas en los headers panel.h, cpu.h,
